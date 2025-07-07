@@ -46,7 +46,7 @@ Este projeto é uma aplicação web completa para gerenciamento e consulta de do
 
 1. **Inicie o servidor backend:**
    ```bash
-   uvicorn main_app:app --reload
+   python main_app.py
    ```
    O servidor estará rodando em `http://127.0.0.1:8000`.
 
