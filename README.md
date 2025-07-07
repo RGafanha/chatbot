@@ -1,2 +1,0 @@
-# chatbot
-Chatbot - TCRG Inteligente
