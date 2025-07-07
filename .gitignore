@@ -1,0 +1,22 @@
+# Ignorar arquivos de ambiente
+.env
+
+# Ignorar diretório de ambiente virtual
+venv/
+
+# Ignorar bancos de dados locais
+chroma_db_chatbot_qa/
+chroma_db_streamlit_app/
+*.sqlite3
+
+# Ignorar diretórios temporários
+temp_images/
+temp_images_from_extract/
+temp_uploads/
+
+# Ignorar caches e arquivos compilados do Python
+__pycache__/
+*.pyc
+
+# Ignorar arquivos de log
+*.log

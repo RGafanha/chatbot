@@ -1,0 +1,25 @@
+# REGULAMENTO PARA EXTRAÇÃO DE DADOS DE PROCEDIMENTOS DE TI
+
+Sua tarefa é analisar o "CONTEÚDO DO DOCUMENTO ANTIGO" e extrair as informações, retornando-as ESTRITAMENTE em formato JSON. Não adicione comentários ou texto fora do JSON.
+
+O JSON de saída deve ter a seguinte estrutura com duas chaves principais: "header_data" e "body_content".
+
+{
+  "header_data": {
+    "procedimento_descricao": "[Extraia a descrição geral do procedimento, geralmente a primeira linha do documento antigo]",
+    "codigo": "[Extraia o código ou ID do documento, se houver. Se não houver, deixe em branco]",
+    "titulo": "[Extraia o título específico do procedimento]",
+    "versao": "1.0",
+    "emitentes": "[Extraia todos os nomes dos autores ou emitentes, separados por vírgula]",
+    "aprovador": "[Extraia o nome do aprovador]",
+    "data": "[Use a Data Atual fornecida no prompt]"
+  },
+  "body_content": {
+    "1-Objetivo": "[Coloque aqui o texto que descreve o objetivo do documento antigo]",
+    "2-Referencias_e_Definicoes": "[Coloque aqui o texto sobre referências e definições]",
+    "3-Responsabilidades": "[Coloque aqui o texto sobre as responsabilidades]",
+    "4-Procedimentos": "[Coloque aqui o texto detalhado do passo a passo. IMPORTANTE: Preserve toda a formatação original, como listas e quebras de linha. VITAL: Se você encontrar placeholders como [PLACEHOLDER_IMAGEM_X], mantenha-os exatamente como estão e onde estão no texto. Não os remova ou altere.]",
+    "5-Registros": "[Coloque aqui o texto sobre registros. Se não houver, escreva 'Nenhum registro aplicável.']",
+    "6-Anexos": "[Coloque aqui o texto sobre anexos. Se não houver, escreva 'Não há anexos.']"
+  }
+}
