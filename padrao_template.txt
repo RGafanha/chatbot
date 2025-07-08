@@ -19,7 +19,7 @@ O JSON de saída deve ter a seguinte estrutura com duas chaves principais: "head
     "2-Referencias_e_Definicoes": "[Coloque aqui o texto sobre referências e definições]",
     "3-Responsabilidades": "[Coloque aqui o texto sobre as responsabilidades]",
     "4-Procedimentos": "[Coloque aqui o texto detalhado do passo a passo. IMPORTANTE: Preserve toda a formatação original, como listas e quebras de linha. VITAL: Se você encontrar placeholders como [PLACEHOLDER_IMAGEM_X], mantenha-os exatamente como estão e onde estão no texto. Não os remova ou altere.]",
-    "5-Registros": "[Coloque aqui o texto sobre registros. Se não houver, escreva 'Nenhum registro aplicável.']",
-    "6-Anexos": "[Coloque aqui o texto sobre anexos. Se não houver, escreva 'Não há anexos.']"
+    "5-Registros": "[Coloque aqui o texto sobre registros. Se não houver, escreva 'N/A']",
+    "6-Anexos": "[Coloque aqui o texto sobre anexos. Se não houver, escreva 'N/A']"
   }
 }

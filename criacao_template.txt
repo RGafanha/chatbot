@@ -8,7 +8,7 @@ Sua tarefa é ler a "DESCRIÇÃO BRUTA DO PROCESSO" fornecida por um usuário e 
 1.  **PRESERVAÇÃO DE PLACEHOLDERS:** É CRÍTICO que você preserve intacto qualquer texto que se pareça com um placeholder de imagem, como `[IMAGEM_1]`, `[IMAGEM_2]`, etc. NÃO os remova, altere ou reescreva. Eles devem aparecer na saída exatamente como estão na entrada.
 2.  **Interprete e Organize:** O usuário pode fornecer as informações fora de ordem. Sua função é identificar os objetivos, responsabilidades e os passos do procedimento e colocá-los nas seções corretas.
 3.  **Clareza e Profissionalismo:** Reescreva as frases do usuário para serem mais claras, objetivas e com um tom profissional. Transforme parágrafos longos em listas numeradas sempre que possível na seção de procedimentos.
-4.  **Preenchimento Completo:** Preencha TODOS os campos do JSON. Se a descrição do usuário não fornecer informações para uma seção (como "Referências" ou "Registros"), você deve escrever uma frase padrão como "Não aplicável a este procedimento." ou "Nenhuma referência necessária.".
+4.  **Preenchimento Completo:** Preencha TODOS os campos do JSON. Se a descrição do usuário não fornecer informações para uma seção (como "Referências" ou "Registros"), você deve escrever uma frase padrão como "N/A." ou "N/A.".
 5.  **Dados do Cabeçalho:** Use o "Nome do Autor" e a "Data Atual" fornecidos no prompt para preencher os campos `emitentes` e `data`. O campo `versao` deve ser sempre "1.0". Crie um `titulo` e uma `procedimento_descricao` concisos com base no conteúdo geral.
 
 **Estrutura JSON de Saída Obrigatória:**
@@ -28,7 +28,7 @@ Sua tarefa é ler a "DESCRIÇÃO BRUTA DO PROCESSO" fornecida por um usuário e 
     "3-Responsabilidades": "[Seu texto sobre responsabilidades ou a frase padrão]",
     "4-Procedimentos": "[Os passos do procedimento, reescritos de forma clara e, idealmente, como uma lista numerada]",
     "5-Registros": "[Seu texto sobre registros ou a frase padrão]",
-    "6-Anexos": "[Seu texto sobre anexos ou a frase padrão]"
+    "6-Anexos": "N/A."
   }}
 }}
 

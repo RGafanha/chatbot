@@ -9,7 +9,14 @@ from fastapi.responses import HTMLResponse, JSONResponse, StreamingResponse
 from pydantic import BaseModel
 from dotenv import load_dotenv
 import docx
-from docx.shared import Inches, Pt, RGBColor
+from docx.shared import Inches, Pt, RGBColor, Cm
+from docx.enum.text import WD_ALIGN_PARAGRAPH
+
+# --- Correção para o erro de SSL ---
+import certifi
+os.environ['SSL_CERT_FILE'] = certifi.where()
+os.environ['REQUESTS_CA_BUNDLE'] = certifi.where()
+# --- Fim da Correção ---
 
 # --- Importações do LangChain ---
 from langchain_community.document_loaders import PyPDFLoader, UnstructuredWordDocumentLoader, TextLoader
@@ -179,12 +186,18 @@ def create_docx_in_memory(structured_data, images_data=None):
                         new_doc.add_paragraph(part)
                 elif part.strip():
                     logging.info(f"Adicionando parte de texto: {part[:100]}...") # Log de DEBUG para INFO
-                    new_doc.add_paragraph(part)
+                    p = new_doc.add_paragraph(part)
+                    p.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
+                    p.paragraph_format.first_line_indent = Cm(1.25)
 
     # Aplica a fonte Arial em todo o documento antes de salvar
     for paragraph in new_doc.paragraphs:
+        # Pula a formatação do cabeçalho que já foi definida
+        if paragraph.style.name.startswith('Heading'):
+            continue
         for run in paragraph.runs:
             run.font.name = 'Arial'
+            run.font.size = Pt(12) # Definindo um tamanho padrão
 
     for table in new_doc.tables:
         for row in table.rows:
@@ -192,6 +205,7 @@ def create_docx_in_memory(structured_data, images_data=None):
                 for paragraph in cell.paragraphs:
                     for run in paragraph.runs:
                         run.font.name = 'Arial'
+                        run.font.size = Pt(10) # Tamanho menor para tabelas
 
     file_stream = io.BytesIO()
     new_doc.save(file_stream)
