@@ -19,7 +19,7 @@ Este projeto é uma aplicação web completa para gerenciamento e consulta de do
 
 1. **Clone o repositório:**
    ```bash
-   git clone <URL_DO_SEU_REPOSITORIO_AQUI>
+   git clone https://github.com/RGafanha/chatbot.git
    cd chatbot_hackathon
    ```
 
